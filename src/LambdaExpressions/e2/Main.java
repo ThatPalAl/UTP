@@ -88,6 +88,17 @@ public class Main {
         emps.forEach(
                 e -> System.out.printf("%s %.0f\n", e, e.getSalary())
         );
+
+
+        //Example 5 Reduction
+        Double sum = emps
+                .stream()
+                .map(Employee::getSalary)
+                .reduce(
+                        0.0,
+                        (part, next) -> part + next);
+
+        System.out.println(sum);
     }
 
 }
